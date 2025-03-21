@@ -1,0 +1,30 @@
+{
+  "type": "module",
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "Learning, node, express, and Mongo.db",
+  "main": "app.cjs",
+  "scripts": {
+    "start:dev": "nodemon server.cjs",
+    "start:prod": "NODE_ENV=production nodemon server.js",
+    "lint": "eslint ."
+  },
+  "author": "Kyle Law",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.12.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.22.0",
+    "eslint": "^9.22.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-n": "^17.16.2",
+    "eslint-plugin-prettier": "^5.2.3",
+    "globals": "^16.0.0",
+    "nodemon": "^3.1.9",
+    "prettier": "3.5.3"
+  }
+}
