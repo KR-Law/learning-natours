@@ -11,7 +11,18 @@ const Tour = require('./../models/tourModels.cjs');
  */
 const getAllTours = async (req, res) => {
   try {
-    const tours = await Tour.find();
+    // Build Query
+    // Shallow copy so can modify. Then ignore fields that require special handling.
+    const queryObj = { ...req.query };
+    const excludedFields = ['page', 'sort', 'limit', 'fields'];
+    excludedFields.forEach((el) => delete queryObj[el]);
+    // const tours = await Tour.find().where('duration').equals(5).where('difficulty').equals('easy');
+    const query = Tour.find(queryObj);
+
+    // Execute Query
+    const tours = await query;
+
+    // Send Response
     res.status(200).json({
       status: 'success',
       requestedAt: req.requestTime,
