@@ -14,7 +14,7 @@ async function dbConnect() {
     if (!dbNameValue) {
       throw new Error('Error connecting and obtaining DB Name');
     }
-    console.log(`Connecting to Database ${dbNameValue}. `);
+    console.log(`Connected to Database ${dbNameValue}. `);
     return mongoose.connection;
   } catch (error) {
     console.log(error);
